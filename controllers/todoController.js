@@ -22,12 +22,12 @@ module.exports = {
 
   getTodo: async (req, res) => {
     try {
-      const todo = await todoRepo.getTodo(req.params.id);
+      const todofind = await todoRepo.getTodo(req.params.id);
 
       res.status(200).json({
         status: "success",
         data: {
-          todo,
+          todofind,
         },
       });
     } catch (err) {
@@ -58,7 +58,7 @@ module.exports = {
 
   updateTodo: async (req, res) => {
     try {
-      const todo = await todoRepo.updateTodo(req.params.id, req.body, {
+      const newTodo = await todoRepo.updateTodo(req.params.id, req.body, {
         new: true,
         runValidators: true,
       });
@@ -78,8 +78,8 @@ module.exports = {
 
   deleteTodo: async (req, res) => {
     try {
-      const todo = await todoRepo.deleteTodo(req.params.id);
-      res.status(204).json({
+       await todoRepo.deleteTodo(req.params.id);
+      res.status(203).json({
         status: "success",
         data: null,
       });

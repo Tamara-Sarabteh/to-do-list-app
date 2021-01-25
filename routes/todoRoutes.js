@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.route('/').get(todoController.getAllTodo).post(todoController.addTodo);
 router
-  .route('/:id')
+  .route('/:_id')
   .get(todoController.getTodo)
   .patch(todoController.updateTodo)
   .delete(todoController.deleteTodo);

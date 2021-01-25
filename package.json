@@ -19,6 +19,8 @@
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.13",
     "morgan": "^1.10.0",
+    "sequelize": "^6.4.0",
+    "sqlite": "^4.0.19",
     "validator": "^13.5.2"
   },
   "engines": {
