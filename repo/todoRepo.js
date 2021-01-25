@@ -1,18 +1,18 @@
-// const { findByIdAndDelete } = require('../../models/userModel');
 const { getTodo } = require("./../controllers/todoController");
 const Todo = require("./../models/todoModel");
+const Sequelize = require("sequelize");
+
 module.exports = {
   getAllTodo: async () => Todo.find(),
-  getTodo: async (id) => Todo.findById(),
+  getTodo: async (id) => Todo.findOne(id),
   addTodo: async ({ name, complete }) =>
     Todo.create({
       name: name,
       complete: complete,
     }),
-  updateTodo: async ({ name, complete }) =>
-    Todo.findByIdAndUpdate({
-      name: name,
-      complete: complete,
-    }),
-  deleteTodo: async (id) => findByIdAndDelete(),
-};
+  updateTodo: async (todoid, { name , complete }) =>
+    Todo.updateMany({ _id : todoid } ,{name : name , complete : complete} ) ,
+  deleteTodo: async (todoid) => Todo.deleteOne({ _id : todoid })
+     }  
+
+     //await Person.replaceOne({ _id }, { name: 'Jean-Luc Picard' })
