@@ -15,4 +15,3 @@ module.exports = {
   deleteTodo: async (todoid) => Todo.deleteOne({ _id: todoid }),
 };
 
-//await Person.replaceOne({ _id }, { name: 'Jean-Luc Picard' })
