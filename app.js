@@ -6,7 +6,7 @@ const userRouter = require("./routes/userRoutes");
 
 app.use(express.json());
 
-app.use("/api/v1/tours", todoRouter);
+app.use("/api/v1/todos", todoRouter);
 app.use("/api/v1/users", userRouter);
 
 app.all("*", (req, res, next) => {
